@@ -26,6 +26,7 @@ echo "Setting keyboard shortcuts completed"
 # ##################################################
 # Terminal
 # ##################################################
+echo "Setting terminal"
 rm -f ~/.config/xfce4/terminal/terminalrc
 mkdir -p ~/.config/xfce4/terminal
 echo "[Configuration]" >> ~/.config/xfce4/terminal/terminalrc
@@ -61,3 +62,15 @@ echo "MiscNewTabAdjacent=FALSE" >> ~/.config/xfce4/terminal/terminalrc
 echo "MiscSearchDialogOpacity=100" >> ~/.config/xfce4/terminal/terminalrc
 echo "MiscShowUnsafePasteDialog=TRUE" >> ~/.config/xfce4/terminal/terminalrc
 echo "TabActivityColor=#0f4999" >> ~/.config/xfce4/terminal/terminalrc
+
+echo "$include /etc/inputrc" >> ~/.inputrc
+echo "" >> ~/.inputrc
+echo "# Case-insensitive tab completion" >> ~/.inputrc
+echo "set completion-ignore-case on" >> ~/.inputrc
+echo "Setting terminal completed"
+
+# ##################################################
+# File Exporer
+# ##################################################
+echo "Setting file explorer"
+echo "Setting file explorer completed"
