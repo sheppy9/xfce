@@ -74,3 +74,6 @@ echo "Setting terminal completed"
 echo "Override thunar configuration"
 mv -f thunar.xml ~/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
 echo "Override thunar configuration completed"
+
+echo "Reboot is required. Enter password to reboot"
+sudo reboot now
