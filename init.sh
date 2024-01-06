@@ -27,7 +27,6 @@ echo "Setting keyboard shortcuts completed"
 # Terminal
 # ##################################################
 echo "Setting terminal"
-rm -f ~/.config/xfce4/terminal/terminalrc
 mkdir -p ~/.config/xfce4/terminal
 echo "[Configuration]" >> ~/.config/xfce4/terminal/terminalrc
 echo "ColorCursor=#ffffff" >> ~/.config/xfce4/terminal/terminalrc
@@ -70,7 +69,8 @@ echo "set completion-ignore-case on" >> ~/.inputrc
 echo "Setting terminal completed"
 
 # ##################################################
-# File Exporer
+# Thunar File Exporer
 # ##################################################
-echo "Setting file explorer"
-echo "Setting file explorer completed"
+echo "Override thunar configuration"
+mv -f thunar.xml ~/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
+echo "Override thunar configuration completed"
