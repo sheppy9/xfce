@@ -1,4 +1,11 @@
 # ##################################################
+# System Theme
+# ##################################################
+echo "Setting system theme"
+xfconf-query -c xsettings -p /Net/ThemeName -s "Adwaita-dark"
+echo "Setting system theme completed"
+
+# ##################################################
 # Keyboard shortcuts
 # ##################################################
 echo "Setting keyboard shortcuts"
