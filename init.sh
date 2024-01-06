@@ -75,5 +75,33 @@ echo "Override thunar configuration"
 mv -f thunar.xml ~/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
 echo "Override thunar configuration completed"
 
-echo "Reboot is required. Enter password to reboot"
-sudo reboot now
+# ##################################################
+# Panel
+# ##################################################
+echo "Override panel configuration"
+mv -f xfce4-panel.xml ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
+echo "Override panel configuration completed"
+
+# ##################################################
+# Applications
+# ##################################################
+sudo apt update
+sudo apt -y upgrade
+
+sudo apt install -y git
+sudo apt install -y flameshot
+
+# Other manual download apps
+# - Vivaldi
+# - Microsoft Edge
+# - Obsidian
+# - VSCode
+# - pCloud
+
+sudo apt autoremove
+
+# ##################################################
+# Reboot
+# ##################################################
+# echo "Reboot is required. Enter password to reboot"
+# sudo reboot now
