@@ -4,6 +4,6 @@ initialization script for Zorin Lite
 
 Usage
 ```
-chmod +x init.sh
+chmod 775 init.sh
 ./init.sh
 ```

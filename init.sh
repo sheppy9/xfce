@@ -1,12 +1,4 @@
 # ##################################################
-# System Theme
-# ##################################################
-echo "Setting system theme"
-xfconf-query -c xsettings -p /Net/ThemeName -s "Adwaita-dark"
-xfconf-query -c xsettings -p /Net/IconThemeName -s "Adwaita"
-echo "Setting system theme completed"
-
-# ##################################################
 # Keyboard shortcuts
 # ##################################################
 echo "Setting keyboard shortcuts"
@@ -31,6 +23,9 @@ sudo apt -y upgrade
 
 sudo apt install -y git
 sudo apt install -y flameshot
+sudo apt install ibus
+sudo apt-get install ibus-libthai
+sudo apt-get install ibus-pinyin
 
 # Other manual download apps
 # - Vivaldi
@@ -38,6 +33,10 @@ sudo apt install -y flameshot
 # - Obsidian
 # - VSCode
 # - pCloud
+
+im-config -n ibus
+ibus-daemon -d
+ibus restart
 
 sudo apt autoremove
 sudo apt autopurge
