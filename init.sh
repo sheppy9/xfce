@@ -21,68 +21,7 @@ xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p '/commands/custom/<Su
 xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p '/commands/custom/<Super>l' -s 'xflock4'
 xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p '/commands/custom/<Super>r' -s 'xfrun4'
 xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p '/commands/custom/<Ctrl>Escape' -s 'xfce4-popup-zorinmenulite'
-# For xfce4 bebian
-# xfconf-query -c xfce4-keyboard-shortcuts -n -t 'string' -p '/commands/custom/<Super>' -s 'xfce4-popup-whiskermenu'
 echo "Setting keyboard shortcuts completed"
-
-# ##################################################
-# Terminal
-# ##################################################
-echo "Setting terminal"
-mkdir -p ~/.config/xfce4/terminal
-echo "[Configuration]" >> ~/.config/xfce4/terminal/terminalrc
-echo "ColorCursor=#ffffff" >> ~/.config/xfce4/terminal/terminalrc
-echo "ColorPalette=#000000;#aa0000;#44aa44;#aa5500;#0039aa;#aa22aa;#1a92aa;#aaaaaa;#777777;#ff8787;#4ce64c;#ded82c;#295fcc;#cc58cc;#4ccce6;#ffffff" >> ~/.config/xfce4/terminal/terminalrc
-echo "FontName=JetBrains Mono 10" >> ~/.config/xfce4/terminal/terminalrc
-echo "FontUseSystem=TRUE" >> ~/.config/xfce4/terminal/terminalrc
-echo "MiscAlwaysShowTabs=FALSE" >> ~/.config/xfce4/terminal/terminalrc
-echo "MiscBell=FALSE" >> ~/.config/xfce4/terminal/terminalrc
-echo "MiscBellUrgent=FALSE" >> ~/.config/xfce4/terminal/terminalrc
-echo "MiscBordersDefault=TRUE" >> ~/.config/xfce4/terminal/terminalrc
-echo "MiscCursorBlinks=TRUE" >> ~/.config/xfce4/terminal/terminalrc
-echo "MiscCursorShape=TERMINAL_CURSOR_SHAPE_IBEAM" >> ~/.config/xfce4/terminal/terminalrc
-echo "MiscDefaultGeometry=80x24" >> ~/.config/xfce4/terminal/terminalrc
-echo "MiscInheritGeometry=FALSE" >> ~/.config/xfce4/terminal/terminalrc
-echo "MiscMenubarDefault=TRUE" >> ~/.config/xfce4/terminal/terminalrc
-echo "MiscMouseAutohide=FALSE" >> ~/.config/xfce4/terminal/terminalrc
-echo "MiscMouseWheelZoom=TRUE" >> ~/.config/xfce4/terminal/terminalrc
-echo "MiscToolbarDefault=FALSE" >> ~/.config/xfce4/terminal/terminalrc
-echo "MiscConfirmClose=TRUE" >> ~/.config/xfce4/terminal/terminalrc
-echo "MiscCycleTabs=TRUE" >> ~/.config/xfce4/terminal/terminalrc
-echo "MiscTabCloseButtons=TRUE" >> ~/.config/xfce4/terminal/terminalrc
-echo "MiscTabCloseMiddleClick=TRUE" >> ~/.config/xfce4/terminal/terminalrc
-echo "MiscTabPosition=GTK_POS_TOP" >> ~/.config/xfce4/terminal/terminalrc
-echo "MiscHighlightUrls=TRUE" >> ~/.config/xfce4/terminal/terminalrc
-echo "MiscMiddleClickOpensUri=FALSE" >> ~/.config/xfce4/terminal/terminalrc
-echo "MiscCopyOnSelect=TRUE" >> ~/.config/xfce4/terminal/terminalrc
-echo "MiscShowRelaunchDialog=TRUE" >> ~/.config/xfce4/terminal/terminalrc
-echo "MiscRewrapOnResize=TRUE" >> ~/.config/xfce4/terminal/terminalrc
-echo "MiscUseShiftArrowsToScroll=FALSE" >> ~/.config/xfce4/terminal/terminalrc
-echo "MiscSlimTabs=FALSE" >> ~/.config/xfce4/terminal/terminalrc
-echo "MiscNewTabAdjacent=FALSE" >> ~/.config/xfce4/terminal/terminalrc
-echo "MiscSearchDialogOpacity=100" >> ~/.config/xfce4/terminal/terminalrc
-echo "MiscShowUnsafePasteDialog=TRUE" >> ~/.config/xfce4/terminal/terminalrc
-echo "TabActivityColor=#0f4999" >> ~/.config/xfce4/terminal/terminalrc
-
-echo "$include /etc/inputrc" >> ~/.inputrc
-echo "" >> ~/.inputrc
-echo "# Case-insensitive tab completion" >> ~/.inputrc
-echo "set completion-ignore-case on" >> ~/.inputrc
-echo "Setting terminal completed"
-
-# ##################################################
-# Thunar File Exporer
-# ##################################################
-echo "Override thunar configuration"
-mv -f thunar.xml ~/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
-echo "Override thunar configuration completed"
-
-# ##################################################
-# Panel
-# ##################################################
-echo "Override panel configuration"
-mv -f xfce4-panel.xml ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
-echo "Override panel configuration completed"
 
 # ##################################################
 # Applications
@@ -101,6 +40,7 @@ sudo apt install -y flameshot
 # - pCloud
 
 sudo apt autoremove
+sudo apt autopurge
 
 # ##################################################
 # Reboot
