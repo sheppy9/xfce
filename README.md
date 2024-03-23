@@ -9,7 +9,6 @@ chmod 775 init.sh
 ## Minimal packages
 - [Application Finder](https://docs.xfce.org/xfce/xfce4-appfinder/start)
 - [Catfish](https://docs.xfce.org/apps/catfish/start)
-- [Evince](https://wiki.gnome.org/Apps/Evince)
 - [Flameshot](https://flameshot.org)
 - [Gedit](https://gedit-technology.github.io/apps/gedit/)
 - [Gnome Disk Usage Analyzer](https://flathub.org/apps/org.gnome.baobab)
@@ -18,6 +17,7 @@ chmod 775 init.sh
 - [Microsoft Edge](https://www.microsoft.com/en-us/edge)
 - [Nano](https://www.nano-editor.org)
 - [Nautilus](https://apps.gnome.org/en-GB/Nautilus/)
+- [Okular](https://okular.kde.org)
 - [Remmina](https://remmina.org)
 - [Ristretto](https://docs.xfce.org/apps/ristretto/start)
 - [System Monitor](https://apps.gnome.org/en-GB/SystemMonitor/)
