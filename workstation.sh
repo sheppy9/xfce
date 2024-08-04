@@ -2,7 +2,7 @@
 # Applications
 # ##################################################
 sudo apt update
-sudo apt install -y nala git flameshot xfce4-whiskermenu-plugin catfish baobab curl net-tools file-roller
+sudo apt install -y nala git flameshot xfce4-whiskermenu-plugin catfish baobab curl net-tools file-roller gnome-calculator gnome-clocks remmina
 sudo apt install -y qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils libguestfs-tools genisoimage virtinst libosinfo-bin virt-manager
 sudo apt install -y ibus ibus-libthai ibus-pinyin
 
@@ -36,6 +36,7 @@ xfconf-query -c xfce4-keyboard-shortcuts -t 'string' -np '/xfwm4/custom/<Super>q
 # - Freetube
 # - Gradle
 # - Java
+# - Dropbox
 
 # ##################################################
 # Language
