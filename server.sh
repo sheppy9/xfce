@@ -12,7 +12,7 @@ sudo apt install -y net-tools curl
 # password: <server_password>
 curl -o webmin.sh https://raw.githubusercontent.com/webmin/webmin/master/setup-repos.sh
 chmod +x webmin.sh
-sudo ./webmin.sh
+sudo ./webmin.sh -f
 sudo apt-get install -y webmin --install-recommends
 
 # ##################################################

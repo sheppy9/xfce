@@ -2,7 +2,7 @@
 # Applications
 # ##################################################
 sudo apt update
-sudo apt install -y nala git flameshot xfce4-whiskermenu-plugin catfish baobab
+sudo apt install -y nala git flameshot xfce4-whiskermenu-plugin catfish baobab curl net-tools
 sudo apt install -y qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils libguestfs-tools genisoimage virtinst libosinfo-bin virt-manager
 sudo apt install -y ibus ibus-libthai ibus-pinyin
 
