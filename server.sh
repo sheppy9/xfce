@@ -55,3 +55,6 @@ sudo apt-get -y autoremove
 sudo apt-get -y autoclean
 sudo apt-get -y autopurge
 sudo apt-get remove --purge -y `dpkg -l | grep '^rc' | awk '{print $2}'`
+
+sudo rm server.sh
+sudo rm webmin.sh
