@@ -32,6 +32,54 @@ xfconf-query -c xfce4-keyboard-shortcuts -t 'string' -np '/commands/custom/<Supe
 xfconf-query -c xfce4-keyboard-shortcuts -t 'string' -np '/xfwm4/custom/<Super>q' -s 'close_window_key'
 ```
 
+# Setting up rclone for box.com
+```bash
+# Install rclone in both server and local machine (for authentication)
+# https://rclone.org/install/#linux-precompiled
+
+curl -O https://downloads.rclone.org/rclone-current-linux-amd64.zip
+unzip rclone-current-linux-amd64.zip
+cd rclone-*-linux-amd64
+sudo cp rclone /usr/bin/
+sudo chown root:root /usr/bin/rclone
+sudo chmod 755 /usr/bin/rclone
+
+# Configure box, use local authentication in the last step to authenticate in local machine
+rclone config
+
+# Configuration in server
+sudo nano /etc/systemd/system/rclone-box.service
+sudo systemctl daemon-reload
+sudo systemctl enable rclone-box.service
+sudo systemctl start rclone-box.service
+sudo systemctl status rclone-box.service
+
+sudo journalctl -u rclone-box
+sudo tail /var/log/rclone-box-output.log
+sudo tail /var/log/rclone-box-error.log
+
+# ==============================
+# Service file
+# ==============================
+[Unit]
+Description=Mount Box.com using rclone
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/rclone --vfs-cache-mode writes mount "box": /home/linux/box
+# Check "which fusermount" path
+ExecStop=/usr/bin/fusermount -u /home/linux/box
+Restart=always
+RestartSec=10
+User=linux
+StandardOutput=file:/var/log/rclone-box-output.log
+StandardError=file:/var/log/rclone-box-error.log
+
+[Install]
+WantedBy=multi-user.target
+```
+
 ## Minimal packages
 - [Application Finder](https://docs.xfce.org/xfce/xfce4-appfinder/start)
 - [Catfish](https://docs.xfce.org/apps/catfish/start)

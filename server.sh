@@ -12,7 +12,7 @@ wait_for_lock() {
 wait_for_lock
 sudo apt-get update
 wait_for_lock
-sudo apt-get install -y net-tools curl openssh-server
+sudo apt-get install -y net-tools curl openssh-server fuse3
 
 # ##################################################
 # Install webmin
