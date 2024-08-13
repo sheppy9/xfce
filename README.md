@@ -67,7 +67,7 @@ After=network-online.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/rclone --vfs-cache-mode writes mount "box": /home/linux/box
+ExecStart=/usr/bin/rclone --vfs-cache-mode writes mount "box": /home/linux/box --allow-non-empty
 # Check "which fusermount" path
 ExecStop=/usr/bin/fusermount -u /home/linux/box
 Restart=always
