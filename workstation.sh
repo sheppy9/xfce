@@ -76,9 +76,9 @@ xfconf-query -c xfce4-desktop -t 'bool' -np '/desktop-icon/file-icons/show-home'
 xfconf-query -c xfce4-desktop -t 'bool' -np '/desktop-icon/file-icons/show-removable' -s 'false'
 
 # Panels settings
-xfconf-query -c xfc4-panel -t 'int' -np '/panels/panel-1/size' -s '40'
-xfconf-query -c xfc4-panel -t 'string' -np '/panels/panel-1/position' -s 'p=0;x=0;y=2560'
-xfconf-query -c xfc4-panel -t 'double' -np '/panels/panel-1/length' -s '100'
+xfconf-query -c xfce4-panel -t 'int' -np '/panels/panel-1/size' -s '40'
+xfconf-query -c xfce4-panel -t 'string' -np '/panels/panel-1/position' -s 'p=0;x=0;y=2560'
+xfconf-query -c xfce4-panel -t 'double' -np '/panels/panel-1/length' -s '100'
 
 # Power Manager
 xfconf-query -c xfc4-power-manager -t 'int' -np '/xfce4-power-manager/power-button-action' -s '4'
