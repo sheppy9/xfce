@@ -98,8 +98,11 @@ xfconf-query -c xfce4-desktop -t 'bool' -np '/desktop-icons/file-icons/show-tras
 xfconf-query -c xfce4-desktop -t 'bool' -np '/desktop-icons/file-icons/show-removable' -s 'false'
 xfconf-query -c xfce4-desktop -t 'bool' -np '/desktop-icons/file-icons/show-filesystem' -s 'false'
 
+curl -o /usr/share/images/desktop-base/my-desktop.jpg https://raw.githubusercontent.com/kaiying1991/xfce/master/asset/my-desktop.jpg
+xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/workspace0/last-image -s /usr/share/images/desktop-base/my-desktop.jpg
+
 # Panels settings
-curl -o ~/Downloads/xfce4-panel-profiles.tar.bz2 https://raw.githubusercontent.com/kaiying1991/xfce/master/config/xfce4-panel-profiles.tar.bz2
+curl -o ~/Downloads/xfce4-panel-profiles.tar.bz2 https://raw.githubusercontent.com/kaiying1991/xfce/master/asset/xfce4-panel-profiles.tar.bz2
 xfce4-panel-profiles load ~/Downloads/xfce4-panel-profiles.tar.bz2
 rm ~/Downloads/xfce4-panel-profiles.tar.bz2
 
