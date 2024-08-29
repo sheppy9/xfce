@@ -101,6 +101,9 @@ xfconf-query -c xfce4-desktop -t 'bool' -np '/desktop-icons/file-icons/show-remo
 xfconf-query -c xfce4-desktop -t 'bool' -np '/desktop-icons/file-icons/show-filesystem' -s 'false'
 xfconf-query -c xfce4-desktop -t 'string' -np '/backdrop/screen0/monitor0/workspace0/last-image' -s '/usr/share/images/desktop-base/my-desktop.jpg'
 
+# Reload desktop
+xfdesktop --quit && xfdesktop &
+
 # Panels settings
 curl -o ~/Downloads/xfce4-panel-profiles.tar.bz2 https://raw.githubusercontent.com/kaiying1991/xfce/master/assets/xfce4-panel-profiles.tar.bz2
 xfce4-panel-profiles load ~/Downloads/xfce4-panel-profiles.tar.bz2
