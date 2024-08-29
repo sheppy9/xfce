@@ -1,7 +1,7 @@
 # ##################################################
 # Debian minimal installation setup
 # ##################################################
-sudo apt install -y xfce4-session firefox-esr
+sudo apt install -y xfce4-session xfce4-terminal sudo firefox-esr
 
 # ##################################################
 # Sudo setup
@@ -11,13 +11,18 @@ su -
 # -- Type password
 echo "linux    ALL=(ALL:ALL) ALL" | sudo tee /etc/sudoers.d/my-sudoers
 chmod 440 /etc/sudoers.d/my-sudoers
+exit
 
 # ##################################################
 # Applications
 # ##################################################
 sudo apt update
 # Default xfce4 packages
-sudo apt install -y xfwm4 xfce4-appfinder xfconf thunar xfce4-panel xfce4-power-manager xfce4-settings tumbler thunar-volman catfish ristretto parole xfce4-notifyd xfce4-panel-profiles xfce4-taskmanager xfce4-terminal xfce4-clipman-plugin xfce4-datetime-plugin xfce4-diskperf-plugin xfce4-fsguard-plugin xfce4-mount-plugin xfce4-mpc-plugin xfce4-systemload-plugin xfce4-timer-plugin xfce4-whiskermenu-plugin gedit
+sudo apt install -y xfwm4 xfce4-appfinder xfconf xfce4-panel xfce4-power-manager xfce4-settings xfce4-notifyd xfce4-panel-profiles xfce4-taskmanager
+# Utilities
+sudo apt install -y thunar tumbler thunar-volman catfish ristretto parole gedit
+# xfce plugins
+sudo apt install -y xfce4-clipman-plugin xfce4-datetime-plugin xfce4-diskperf-plugin xfce4-fsguard-plugin xfce4-mount-plugin xfce4-mpc-plugin xfce4-systemload-plugin xfce4-timer-plugin xfce4-whiskermenu-plugin
 # Other interested packages
 sudo apt install -y nala git flameshot baobab curl net-tools file-roller gnome-calculator gnome-clocks remmina bspwm sxhkd
 sudo apt install -y qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils libguestfs-tools genisoimage virtinst libosinfo-bin virt-manager
@@ -142,4 +147,4 @@ sudo apt-get remove --purge -y `dpkg -l | grep '^rc' | awk '{print $2}'`
 # Reboot
 # ##################################################
 # echo "Reboot is required. Enter password to reboot"
-# sudo reboot now
+sudo reboot now
