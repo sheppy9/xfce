@@ -92,7 +92,8 @@ xfconf-query -c xfce4-appfinder -t 'bool' -np '/always-center' -s 'true'
 xfconf-query -c xfc4-appfinder -t 'int' -np '/item-icon-size' -s '0'
 
 # Desktop
-curl -o /usr/share/images/desktop-base/my-desktop.jpg https://raw.githubusercontent.com/kaiying1991/xfce/master/assets/my-desktop.jpg
+sudo curl -o /usr/share/images/desktop-base/my-desktop.jpg https://raw.githubusercontent.com/kaiying1991/xfce/master/assets/my-desktop.jpg
+sudo chmod 644 /usr/share/images/desktop-base/my-desktop.jpg
 
 xfconf-query -c xfce4-desktop -t 'bool' -np '/desktop-menu/show-delete' -s 'false'
 xfconf-query -c xfce4-desktop -t 'bool' -np '/desktop-icons/file-icons/show-home' -s 'false'
