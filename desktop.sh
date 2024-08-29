@@ -99,7 +99,7 @@ xfconf-query -c xfce4-desktop -t 'bool' -np '/desktop-icons/file-icons/show-remo
 xfconf-query -c xfce4-desktop -t 'bool' -np '/desktop-icons/file-icons/show-filesystem' -s 'false'
 
 curl -o /usr/share/images/desktop-base/my-desktop.jpg https://raw.githubusercontent.com/kaiying1991/xfce/master/asset/my-desktop.jpg
-xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/workspace0/last-image -s /usr/share/images/desktop-base/my-desktop.jpg
+xfconf-query -c xfce4-desktop -t 'string' -np '/backdrop/screen0/monitor0/workspace0/last-image' -s '/usr/share/images/desktop-base/my-desktop.jpg'
 
 # Panels settings
 curl -o ~/Downloads/xfce4-panel-profiles.tar.bz2 https://raw.githubusercontent.com/kaiying1991/xfce/master/asset/xfce4-panel-profiles.tar.bz2
