@@ -82,9 +82,9 @@ xfconf-query -c xfce4-desktop -t 'bool' -np '/desktop-icon/file-icons/show-home'
 xfconf-query -c xfce4-desktop -t 'bool' -np '/desktop-icon/file-icons/show-removable' -s 'false'
 
 # Panels settings
-curl -o ~/Downloads/xfce4-panel-profile.tar.bz2 https://raw.githubusercontent.com/kaiying1991/xfce/master/config/xfce4-panel-profile.tar.bz2
-xfce4-panel-profiles load ~/Downloads/xfce4-panel-profile.tar.bz2
-rm ~/Downloads/xfce4-panel-profile.tar.bz2
+curl -o ~/Downloads/xfce4-panel-profiles.tar.bz2 https://raw.githubusercontent.com/kaiying1991/xfce/master/config/xfce4-panel-profiles.tar.bz2
+xfce4-panel-profiles load ~/Downloads/xfce4-panel-profiles.tar.bz2
+rm ~/Downloads/xfce4-panel-profiles.tar.bz2
 
 # Power Manager
 xfconf-query -c xfc4-power-manager -t 'int' -np '/xfce4-power-manager/power-button-action' -s '4'
