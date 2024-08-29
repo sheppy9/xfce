@@ -1,7 +1,8 @@
 # ##################################################
 # Debian minimal installation setup
 # ##################################################
-sudo apt install -y xfce4-session xfce4-terminal sudo firefox-esr
+# NOTE: install without root account
+sudo apt install -y xfce4-session xfce4-terminal firefox-esr
 
 # ##################################################
 # Sudo setup
@@ -20,7 +21,7 @@ sudo apt update
 # Default xfce4 packages
 sudo apt install -y xfwm4 xfce4-appfinder xfconf xfce4-panel xfce4-power-manager xfce4-settings xfce4-notifyd xfce4-panel-profiles xfce4-taskmanager
 # Utilities
-sudo apt install -y thunar tumbler thunar-volman catfish ristretto parole gedit
+sudo apt install -y thunar tumbler thunar-volman catfish ristretto parole notepadqq
 # xfce plugins
 sudo apt install -y xfce4-clipman-plugin xfce4-datetime-plugin xfce4-diskperf-plugin xfce4-fsguard-plugin xfce4-mount-plugin xfce4-mpc-plugin xfce4-systemload-plugin xfce4-timer-plugin xfce4-whiskermenu-plugin
 # Other interested packages
