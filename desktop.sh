@@ -9,7 +9,12 @@ chmod 440 /etc/sudoers.d/my-sudoers
 # Applications
 # ##################################################
 sudo apt update
-sudo apt install -y nala git flameshot xfce4-whiskermenu-plugin catfish baobab curl net-tools file-roller gnome-calculator gnome-clocks remmina bspwm sxhkd
+# Minimum installation
+sudo apt install -y xfwm4 firefox-esr
+# Default xfce4 packages
+sudo apt install -y xfce4-appfinder xfconf thunar xfce4-panel xfce4-power-manager xfce4-session xfce4-settings tumbler thunar-volman catfish ristretto parole xfce4-notifyd xfce4-panel-profiles xfce4-taskmanager xfce4-terminal xfce4-clipman-plugin xfce4-datetime-plugin xfce4-diskperf-plugin xfce4-fsguard-plugin xfce4-mount-plugin xfce4-mpc-plugin xfce4-systemload-plugin xfce4-timer-plugin xfce4-whiskermenu-plugin gedit
+# Other interested packages
+sudo apt install -y nala git flameshot baobab curl net-tools file-roller gnome-calculator gnome-clocks remmina bspwm sxhkd
 sudo apt install -y qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils libguestfs-tools genisoimage virtinst libosinfo-bin virt-manager
 sudo apt install -y ibus ibus-libthai ibus-pinyin
 
