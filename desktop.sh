@@ -93,9 +93,10 @@ xfconf-query -c xfc4-appfinder -t 'int' -np '/item-icon-size' -s '0'
 
 # Desktop
 xfconf-query -c xfce4-desktop -t 'bool' -np '/desktop-menu/show-delete' -s 'false'
-xfconf-query -c xfce4-desktop -t 'bool' -np '/desktop-icon/file-icons/show-filesystem' -s 'false'
-xfconf-query -c xfce4-desktop -t 'bool' -np '/desktop-icon/file-icons/show-home' -s 'false'
-xfconf-query -c xfce4-desktop -t 'bool' -np '/desktop-icon/file-icons/show-removable' -s 'false'
+xfconf-query -c xfce4-desktop -t 'bool' -np '/desktop-icons/file-icons/show-home' -s 'false'
+xfconf-query -c xfce4-desktop -t 'bool' -np '/desktop-icons/file-icons/show-trash' -s 'false'
+xfconf-query -c xfce4-desktop -t 'bool' -np '/desktop-icons/file-icons/show-removable' -s 'false'
+xfconf-query -c xfce4-desktop -t 'bool' -np '/desktop-icons/file-icons/show-filesystem' -s 'false'
 
 # Panels settings
 curl -o ~/Downloads/xfce4-panel-profiles.tar.bz2 https://raw.githubusercontent.com/kaiying1991/xfce/master/config/xfce4-panel-profiles.tar.bz2
