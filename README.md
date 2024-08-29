@@ -1,17 +1,17 @@
 # Scripts
-- [Workstation](workstation.sh)
+- [Desktop](desktop.sh)
 - [Server](server.sh)
 
 ## Setup
 ```bash
-# Workstation setup script
-chmod 775 workstation.sh && ./workstation.sh
+# Desktop setup script
+chmod 775 desktop.sh && ./desktop.sh
 
 # Server setup script
 chmod 775 server.sh && ./server.sh
 ```
 
-# Workstation shortcuts
+# Desktop shortcuts
 ```bash
 xfconf-query -c xfce4-keyboard-shortcuts -t 'string' -np '/commands/custom/<Super>c' -s 'code'
 xfconf-query -c xfce4-keyboard-shortcuts -t 'string' -np '/commands/custom/<Super>n' -s 'gedit'
