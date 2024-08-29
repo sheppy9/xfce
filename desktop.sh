@@ -1,6 +1,7 @@
 # ##################################################
 # Sudo setup
 # ##################################################
+# Run the following to add "linux" to sudo
 echo "linux    ALL=(ALL:ALL) ALL" | sudo tee /etc/sudoers.d/my-sudoers
 chmod 440 /etc/sudoers.d/my-sudoers
 
