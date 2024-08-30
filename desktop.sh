@@ -7,19 +7,19 @@ sudo apt install -y xfce4-session xfce4-terminal firefox-esr
 # ##################################################
 # Sudo setup
 # ##################################################
-# Run the following to add "linux" to sudo
-su -
+# Run the following to add "linux" to sudo if default "root" account is created
+# su -
 # -- Type password
-echo "linux    ALL=(ALL:ALL) ALL" | sudo tee /etc/sudoers.d/my-sudoers
-chmod 440 /etc/sudoers.d/my-sudoers
-exit
+# echo "linux    ALL=(ALL:ALL) ALL" | sudo tee /etc/sudoers.d/my-sudoers
+# chmod 440 /etc/sudoers.d/my-sudoers
+# exit
 
 # ##################################################
 # Applications
 # ##################################################
 sudo apt update
 # Default xfce4 packages
-sudo apt install -y xfwm4 xfce4-appfinder xfconf xfce4-panel xfce4-power-manager xfce4-settings xfce4-notifyd xfce4-panel-profiles xfce4-taskmanager
+sudo apt install -y xfwm4 xfce4-appfinder xfconf xfce4-panel xfce4-power-manager xfce4-settings xfce4-notifyd xfce4-panel-profiles xfce4-taskmanager exo
 # Utilities
 sudo apt install -y thunar tumbler thunar-volman catfish ristretto parole notepadqq
 # xfce plugins
