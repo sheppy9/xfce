@@ -93,7 +93,7 @@ xfconf-query -c xfce4-appfinder -t 'bool' -np '/always-center' -s 'true'
 xfconf-query -c xfc4-appfinder -t 'int' -np '/item-icon-size' -s '0'
 
 # Desktop
-sudo curl -o /usr/share/images/desktop-base/my-desktop.jpg https://raw.githubusercontent.com/kaiying1991/xfce/master/assets/my-desktop.jpg
+sudo curl -o /usr/share/images/desktop-base/my-desktop.jpg https://raw.githubusercontent.com/sheppy9/xfce/master/assets/my-desktop.jpg
 sudo chmod 644 /usr/share/images/desktop-base/my-desktop.jpg
 
 xfconf-query -c xfce4-desktop -t 'bool' -np '/desktop-menu/show-delete' -s 'false'
@@ -107,7 +107,7 @@ xfconf-query -c xfce4-desktop -t 'string' -np '/backdrop/screen0/monitor0/worksp
 xfdesktop --quit && xfdesktop &
 
 # Panels settings
-curl -o ~/Downloads/xfce4-panel-profiles.tar.bz2 https://raw.githubusercontent.com/kaiying1991/xfce/master/assets/xfce4-panel-profiles.tar.bz2
+curl -o ~/Downloads/xfce4-panel-profiles.tar.bz2 https://raw.githubusercontent.com/sheppy9/xfce/master/assets/xfce4-panel-profiles.tar.bz2
 xfce4-panel-profiles load ~/Downloads/xfce4-panel-profiles.tar.bz2
 rm ~/Downloads/xfce4-panel-profiles.tar.bz2
 
