@@ -102,15 +102,12 @@ xfconf-query -c xfce4-appfinder -t 'bool' -np '/always-center' -s 'true'
 xfconf-query -c xfc4-appfinder -t 'int' -np '/item-icon-size' -s '0'
 
 # Desktop
-sudo curl -o /usr/share/images/desktop-base/my-desktop.jpg https://raw.githubusercontent.com/sheppy9/xfce/master/assets/my-desktop.jpg
-sudo chmod 644 /usr/share/images/desktop-base/my-desktop.jpg
-
 xfconf-query -c xfce4-desktop -t 'bool' -np '/desktop-menu/show-delete' -s 'false'
 xfconf-query -c xfce4-desktop -t 'bool' -np '/desktop-icons/file-icons/show-home' -s 'false'
 xfconf-query -c xfce4-desktop -t 'bool' -np '/desktop-icons/file-icons/show-trash' -s 'false'
 xfconf-query -c xfce4-desktop -t 'bool' -np '/desktop-icons/file-icons/show-removable' -s 'false'
 xfconf-query -c xfce4-desktop -t 'bool' -np '/desktop-icons/file-icons/show-filesystem' -s 'false'
-xfconf-query -c xfce4-desktop -t 'string' -np '/backdrop/screen0/monitor0/workspace0/last-image' -s '/usr/share/images/desktop-base/my-desktop.jpg'
+xfconf-query -c xfce4-desktop -t 'string' -np '/backdrop/screen0/monitor0/workspace0/last-image' -s '/usr/share/images/desktop-base/plasma-workspace-wallpapers-flow-5120x2880.jpg'
 
 # Reload desktop
 xfdesktop --quit && xfdesktop &
