@@ -24,6 +24,8 @@ sudo apt install -y xfwm4 xfce4-appfinder xfconf xfce4-panel xfce4-power-manager
 sudo apt install -y thunar tumbler thunar-volman catfish ristretto parole notepadqq
 # xfce plugins
 sudo apt install -y xfce4-clipman-plugin xfce4-datetime-plugin xfce4-diskperf-plugin xfce4-fsguard-plugin xfce4-mount-plugin xfce4-mpc-plugin xfce4-systemload-plugin xfce4-timer-plugin xfce4-whiskermenu-plugin
+# Themes
+sudo apt install -y arc-theme
 # Other interested packages
 sudo apt install -y nala git flameshot baobab curl net-tools file-roller gnome-calculator gnome-clocks remmina bspwm sxhkd
 sudo apt install -y qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils libguestfs-tools genisoimage virtinst libosinfo-bin virt-manager
@@ -78,7 +80,7 @@ ibus restart
 # OS configuration
 # ##################################################
 # Theme
-xfconf-query -c xsettings -t 'string' -np '/Net/ThemeName' -s 'Adwaita-dark'
+xfconf-query -c xsettings -t 'string' -np '/Net/ThemeName' -s 'Arc-Dark'
 xfconf-query -c xsettings -t 'string' -np '/Net/IconThemeName' -s 'Adwaita'
 
 # Thunar
