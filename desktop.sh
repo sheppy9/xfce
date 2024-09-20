@@ -32,6 +32,12 @@ sudo apt install -y qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils 
 sudo apt install -y ibus ibus-libthai ibus-pinyin
 
 # ##################################################
+# Assets
+# ##################################################
+sudo curl -L -o /usr/share/images/desktop-base/plasma-workspace-wallpapers-flow-5120x2880.jpg https://github.com/sheppy9/xfce/raw/master/assets/plasma-workspace-wallpapers-flow-5120x2880.jpg
+sudo curl -L -o /usr/share/images/desktop-base/plasma-workspace-wallpapers-elaran-2560x1600.png https://github.com/sheppy9/xfce/raw/master/assets/plasma-workspace-wallpapers-elaran-2560x1600.png
+
+# ##################################################
 # Keyboard shortcuts
 # ##################################################
 xfconf-query -c xfce4-keyboard-shortcuts -t 'string' -np '/commands/custom/<Super>c' -s 'code'
@@ -137,6 +143,7 @@ xfconf-query -c xfwm4 -t 'bool' -np '/general/cycle_workspaces' -s 'true'
 xfconf-query -c xfwm4 -t 'bool' -np '/general/cycle_minimized' -s 'true'
 xfconf-query -c xfwm4 -t 'string' -np '/general/activate_action' -s 'switch'
 xfconf-query -c xfwm4 -t 'string' -np '/general/placeholder_mode' -s 'center'
+xfconf-query -c xfwm4 -t 'string' -np '/general/title_alignment' -s 'left'
 
 # xfconf-query -c xsettings -t 'string' -np '' -s ''
 # xfconf-query -c xsettings -t 'int' -np '' -s ''
