@@ -34,8 +34,15 @@ sudo apt install -y ibus ibus-libthai ibus-pinyin
 # ##################################################
 # Assets
 # ##################################################
-sudo curl -L -o /usr/share/images/desktop-base/plasma-workspace-wallpapers-flow-5120x2880.jpg https://github.com/sheppy9/xfce/raw/master/assets/plasma-workspace-wallpapers-flow-5120x2880.jpg
-sudo curl -L -o /usr/share/images/desktop-base/plasma-workspace-wallpapers-elaran-2560x1600.png https://github.com/sheppy9/xfce/raw/master/assets/plasma-workspace-wallpapers-elaran-2560x1600.png
+image_names=(
+	"plasma-workspace-wallpapers-flow-5120x2880.jpg"
+	"plasma-workspace-wallpapers-elaran-2560x1600.png"
+	"luffy-gear-6-5000x2812.png"
+)
+
+for image_name in "${image_names[@]}"; do
+	sudo curl -L -o "/usr/share/images/desktop-base/${image_name}" "https://github.com/sheppy9/xfce/raw/master/assets/${image_name}"
+done
 
 # ##################################################
 # Keyboard shortcuts
@@ -73,14 +80,14 @@ xfconf-query -c xfce4-keyboard-shortcuts -t 'string' -np '/xfwm4/custom/<Super>d
 # ##################################################
 # Language
 # ##################################################
-# Setting Keyboard method input system to ibus
-im-config -n ibus
-# Adding 'pinyin' and 'libthai' to input methods
-gsettings set org.freedesktop.ibus.general preload-engines "['xkb:us::eng', 'pinyin', 'libthai']"
-# Start the ibus daemon. daemonize and replace if found existing
-ibus-daemon -dr
-# Restart ibus
-ibus restart
+# # Setting Keyboard method input system to ibus
+# im-config -n ibus
+# # Adding 'pinyin' and 'libthai' to input methods
+# gsettings set org.freedesktop.ibus.general preload-engines "['xkb:us::eng', 'pinyin', 'libthai']"
+# # Start the ibus daemon. daemonize and replace if found existing
+# ibus-daemon -dr
+# # Restart ibus
+# ibus restart
 
 # ##################################################
 # OS configuration
@@ -113,9 +120,9 @@ xfconf-query -c xfce4-desktop -t 'string' -np '/backdrop/screen0/monitor0/worksp
 xfdesktop --quit && xfdesktop &
 
 # Panels settings
-curl -o ~/Downloads/xfce4-panel-profiles.tar.bz2 https://raw.githubusercontent.com/sheppy9/xfce/master/assets/xfce4-panel-profiles.tar.bz2
-xfce4-panel-profiles load ~/Downloads/xfce4-panel-profiles.tar.bz2
-rm ~/Downloads/xfce4-panel-profiles.tar.bz2
+# curl -o ~/Downloads/xfce4-panel-profiles.tar.bz2 https://raw.githubusercontent.com/sheppy9/xfce/master/assets/xfce4-panel-profiles.tar.bz2
+# xfce4-panel-profiles load ~/Downloads/xfce4-panel-profiles.tar.bz2
+# rm ~/Downloads/xfce4-panel-profiles.tar.bz2
 
 # Power Manager
 xfconf-query -c xfc4-power-manager -t 'int' -np '/xfce4-power-manager/power-button-action' -s '4'
@@ -147,8 +154,8 @@ xfconf-query -c xfwm4 -t 'string' -np '/general/title_alignment' -s 'left'
 # xfconf-query -c xsettings -t 'double' -np '' -s ''
 # xfconf-query -c xsettings -t 'bool' -np '' -s ''
 
-git config --global user.name "kaiying"
-git config --global user.email kaiying1991@hotmail.com
+# git config --global user.name "kaiying"
+# git config --global user.email kaiying1991@hotmail.com
 
 # ##################################################
 # APT cleanup
@@ -163,4 +170,4 @@ sudo apt-get remove --purge -y `dpkg -l | grep '^rc' | awk '{print $2}'`
 # Reboot
 # ##################################################
 # echo "Reboot is required. Enter password to reboot"
-sudo reboot now
+# sudo reboot now
