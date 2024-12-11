@@ -21,7 +21,7 @@ sudo apt update
 # Default xfce4 packages
 sudo apt install -y xfwm4 xfce4-appfinder xfconf xfce4-panel xfce4-power-manager xfce4-settings xfce4-notifyd xfce4-panel-profiles xfce4-taskmanager
 # Utilities
-sudo apt install -y thunar tumbler thunar-volman catfish ristretto parole notepadqq
+sudo apt install -y thunar tumbler thunar-volman catfish ristretto parole gedit
 # xfce plugins
 sudo apt install -y xfce4-clipman-plugin xfce4-datetime-plugin xfce4-diskperf-plugin xfce4-fsguard-plugin xfce4-mount-plugin xfce4-mpc-plugin xfce4-systemload-plugin xfce4-timer-plugin xfce4-whiskermenu-plugin
 # Themes
@@ -119,11 +119,6 @@ xfconf-query -c xfce4-desktop -t 'string' -np '/backdrop/screen0/monitor0/worksp
 # Reload desktop
 xfdesktop --quit && xfdesktop &
 
-# Panels settings
-# curl -o ~/Downloads/xfce4-panel-profiles.tar.bz2 https://raw.githubusercontent.com/sheppy9/xfce/master/assets/xfce4-panel-profiles.tar.bz2
-# xfce4-panel-profiles load ~/Downloads/xfce4-panel-profiles.tar.bz2
-# rm ~/Downloads/xfce4-panel-profiles.tar.bz2
-
 # Power Manager
 xfconf-query -c xfc4-power-manager -t 'int' -np '/xfce4-power-manager/power-button-action' -s '4'
 xfconf-query -c xfc4-power-manager -t 'int' -np '/xfce4-power-manager/blank-on-ac' -s '0'
@@ -154,20 +149,16 @@ xfconf-query -c xfwm4 -t 'string' -np '/general/title_alignment' -s 'left'
 # xfconf-query -c xsettings -t 'double' -np '' -s ''
 # xfconf-query -c xsettings -t 'bool' -np '' -s ''
 
-# git config --global user.name "kaiying"
-# git config --global user.email kaiying1991@hotmail.com
-
 # ##################################################
 # APT cleanup
 # ##################################################
-sudo apt -y upgrade
-sudo apt -y autoremove
-sudo apt -y autoclean
-sudo apt -y autopurge
-sudo apt-get remove --purge -y `dpkg -l | grep '^rc' | awk '{print $2}'`
+sudo nala update
+sudo nala upgrade -y
+sudo nala autoremove -y
+sudo nala autopurge -y
 
 # ##################################################
 # Reboot
 # ##################################################
 # echo "Reboot is required. Enter password to reboot"
-# sudo reboot now
+sudo reboot now
