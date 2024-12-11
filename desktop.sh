@@ -2,7 +2,7 @@
 # Debian minimal installation setup
 # ##################################################
 # NOTE: install without root account
-sudp apt install nala -y
+sudo apt install nala -y
 sudo nala install xfce4-session xfce4-terminal -y
 
 # ##################################################
