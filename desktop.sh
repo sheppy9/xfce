@@ -27,7 +27,7 @@ sudo apt install -y xfce4-clipman-plugin xfce4-datetime-plugin xfce4-diskperf-pl
 # Themes
 sudo apt install -y arc-theme
 # Other interested packages
-sudo apt install -y nala git flameshot baobab curl net-tools file-roller gnome-calculator gnome-clocks remmina bspwm sxhkd
+sudo apt install -y nala git flameshot keepassxc baobab curl net-tools file-roller gnome-calculator gnome-clocks remmina bspwm sxhkd
 sudo apt install -y qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils libguestfs-tools genisoimage virtinst libosinfo-bin virt-manager
 sudo apt install -y ibus ibus-libthai ibus-pinyin
 
