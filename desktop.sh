@@ -2,7 +2,8 @@
 # Debian minimal installation setup
 # ##################################################
 # NOTE: install without root account
-sudo apt install -y xfce4-session xfce4-terminal firefox-esr
+sudp apt install nala -y
+sudo nala install xfce4-session xfce4-terminal -y
 
 # ##################################################
 # Sudo setup
@@ -17,19 +18,19 @@ sudo apt install -y xfce4-session xfce4-terminal firefox-esr
 # ##################################################
 # Applications
 # ##################################################
-sudo apt update
+sudo nala update
 # Default xfce4 packages
-sudo apt install -y xfwm4 xfce4-appfinder xfconf xfce4-panel xfce4-power-manager xfce4-settings xfce4-notifyd xfce4-panel-profiles xfce4-taskmanager
+sudo nala install xfwm4 xfce4-appfinder xfconf xfce4-panel xfce4-power-manager xfce4-settings xfce4-notifyd xfce4-panel-profiles xfce4-taskmanager -y
 # Utilities
-sudo apt install -y thunar tumbler thunar-volman catfish ristretto parole gedit
+sudo nala install thunar tumbler thunar-volman catfish ristretto parole gedit -y
 # xfce plugins
-sudo apt install -y xfce4-clipman-plugin xfce4-datetime-plugin xfce4-diskperf-plugin xfce4-fsguard-plugin xfce4-mount-plugin xfce4-mpc-plugin xfce4-systemload-plugin xfce4-timer-plugin xfce4-whiskermenu-plugin
+sudo nala install xfce4-clipman-plugin xfce4-datetime-plugin xfce4-diskperf-plugin xfce4-fsguard-plugin xfce4-mount-plugin xfce4-mpc-plugin xfce4-systemload-plugin xfce4-timer-plugin xfce4-whiskermenu-plugin -y
 # Themes
-sudo apt install -y arc-theme
+sudo nala install arc-theme -y
 # Other interested packages
-sudo apt install -y nala git flameshot keepassxc baobab curl net-tools file-roller gnome-calculator gnome-clocks remmina bspwm sxhkd
-sudo apt install -y qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils libguestfs-tools genisoimage virtinst libosinfo-bin virt-manager
-sudo apt install -y ibus ibus-libthai ibus-pinyin
+sudo nala install git flameshot keepassxc baobab curl net-tools file-roller gnome-calculator gnome-clocks remmina bspwm sxhkd -y
+sudo nala install qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils libguestfs-tools genisoimage virtinst libosinfo-bin virt-manager -y
+sudo nala install ibus ibus-libthai ibus-pinyin -y
 
 # ##################################################
 # Applications (via .deb)
