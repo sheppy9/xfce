@@ -49,17 +49,17 @@ for file in "${DEB_FILES[@]}"; do
 	rm "$name.deb"
 done
 
-# Other manual download apps
-# - Gradle
-# - Dropbox
-
 # ##################################################
-# Vivaldi (optional)
+# Vivaldi
 # ##################################################
 curl -fsSL https://repo.vivaldi.com/stable/linux_signing_key.pub | sudo gpg --dearmor -o /usr/share/keyrings/vivaldi-archive-keyring.gpg
 echo "deb [arch=amd64 signed-by=/usr/share/keyrings/vivaldi-archive-keyring.gpg] https://repo.vivaldi.com/stable/deb/ stable main" | sudo tee /etc/apt/sources.list.d/vivaldi.list
 sudo nala update
 sudo nala install vivaldi-stable -y
+
+# Other manual download apps
+# - Gradle
+# - Dropbox
 
 # ##################################################
 # Java JDK (optional)
