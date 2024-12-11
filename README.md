@@ -1,8 +1,8 @@
 # Scripts
 - [Desktop](desktop.sh)
-	- curl: `curl -O https://raw.githubusercontent.com/sheppy9/xfce/master/desktop.sh`
+	- curl: `wget https://raw.githubusercontent.com/sheppy9/xfce/master/desktop.sh`
 - [Server](server.sh)
-	- curl: `curl -O https://raw.githubusercontent.com/sheppy9/xfce/master/server.sh`
+	- curl: `wget https://raw.githubusercontent.com/sheppy9/xfce/master/server.sh`
 
 ## Setup
 ```bash
