@@ -31,6 +31,30 @@ sudo apt install -y nala git flameshot baobab curl net-tools file-roller gnome-c
 sudo apt install -y qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils libguestfs-tools genisoimage virtinst libosinfo-bin virt-manager
 sudo apt install -y ibus ibus-libthai ibus-pinyin
 
+sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/warpdotdev.gpg] https://releases.warp.dev/linux/deb stable main" >> /etc/apt/sources.list.d/sheppy-sources.list'
+sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/code stable main" >> /etc/apt/sources.list.d/sheppy-sources.list'
+sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/edge/ stable main" >> /etc/apt/sources.list.d/sheppy-sources.list'
+
+sudo nala update
+
+sudo nala install warp-terminal code microsoft-edge-stable -y
+
+# DEB_FILES=(
+	# "warp-terminal https://app.warp.dev/download?package=deb"
+	# "vscode https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
+	# "rambox https://rambox.app/api/download?os=linux&package=deb"
+	# "ms-edge https://go.microsoft.com/fwlink?linkid=2149051&brand=M102"
+# )
+
+# # Download, install, and clean up .deb files
+# for file in "${DEB_FILES[@]}"; do
+# 	name=$(echo "$file" | cut -d' ' -f1)
+# 	url=$(echo "$file" | cut -d' ' -f2-)
+# 	wget -O "$name.deb" "$url"
+# 	sudo nala install "$name.deb" -y
+# 	rm "$name.deb"
+# done
+
 # ##################################################
 # Assets
 # ##################################################
@@ -68,11 +92,6 @@ xfconf-query -c xfce4-keyboard-shortcuts -t 'string' -np '/xfwm4/custom/<Super>d
 
 # Other manual download apps
 # - Vivaldi
-# - Microsoft Edge
-# - VSCode
-# - Warp terminal
-# - Rambox
-# - Freetube
 # - Gradle
 # - Java
 # - Dropbox
