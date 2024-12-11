@@ -31,14 +31,16 @@ sudo apt install -y nala git flameshot baobab curl net-tools file-roller gnome-c
 sudo apt install -y qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils libguestfs-tools genisoimage virtinst libosinfo-bin virt-manager
 sudo apt install -y ibus ibus-libthai ibus-pinyin
 
+# ##################################################
+# Applications (via .deb)
+# ##################################################
 DEB_FILES=(
-	"warp-terminal https://app.warp.dev/download?package=deb"
 	"vscode https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
+	"warp-terminal https://app.warp.dev/download?package=deb"
 	"rambox https://rambox.app/api/download?os=linux&package=deb"
 	"ms-edge https://go.microsoft.com/fwlink?linkid=2149051&brand=M102"
 )
 
-# Download, install, and clean up .deb files
 for file in "${DEB_FILES[@]}"; do
 	name=$(echo "$file" | cut -d' ' -f1)
 	url=$(echo "$file" | cut -d' ' -f2-)
@@ -46,6 +48,18 @@ for file in "${DEB_FILES[@]}"; do
 	sudo nala install "$name.deb" -y
 	rm "$name.deb"
 done
+
+# Other manual download apps
+# - Vivaldi
+# - Gradle
+# - Dropbox
+
+# ##################################################
+# Java JDK (optional)
+# ##################################################
+# echo "deb https://packages.adoptium.net/artifactory/deb $(awk -F= '/^VERSION_CODENAME/{print$2}' /etc/os-release) main" | sudo tee /etc/apt/sources.list.d/adoptium.list
+# wget -qO - https://packages.adoptium.net/artifactory/api/gpg/key/public | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/adoptium.gpg > /dev/null
+# sudo nala install apt-transport-https gpg temurin-8-jdk temurin-11-jdk temurin-17-jdk temurin-21-jdk -y
 
 # ##################################################
 # Assets
@@ -81,12 +95,6 @@ xfconf-query -c xfce4-keyboard-shortcuts -t 'string' -np '/commands/custom/<Supe
 
 xfconf-query -c xfce4-keyboard-shortcuts -t 'string' -np '/xfwm4/custom/<Super>q' -s 'close_window_key'
 xfconf-query -c xfce4-keyboard-shortcuts -t 'string' -np '/xfwm4/custom/<Super>d' -s 'show_desktop_key'
-
-# Other manual download apps
-# - Vivaldi
-# - Gradle
-# - Java
-# - Dropbox
 
 # ##################################################
 # Language
