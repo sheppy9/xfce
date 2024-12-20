@@ -32,6 +32,9 @@ sudo nala install git flameshot keepassxc baobab curl net-tools file-roller gnom
 sudo nala install qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils libguestfs-tools genisoimage virtinst libosinfo-bin virt-manager -y
 sudo nala install ibus ibus-libthai ibus-pinyin -y
 
+# Lightweight browser
+# sudo nala install falkon -y
+
 # ##################################################
 # Applications (via .deb)
 # ##################################################
