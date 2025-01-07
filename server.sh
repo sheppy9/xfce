@@ -20,7 +20,7 @@ sudo apt-get install -y net-tools curl openssh-server fuse3
 # Login to webadmin using https://<ip_address>:10000
 # username: <server_username>
 # password: <server_password>
-curl -o webmin.sh https://raw.githubusercontent.com/webmin/webmin/master/setup-repos.sh
+wget -O webmin.sh https://raw.githubusercontent.com/webmin/webmin/master/setup-repos.sh
 chmod +x webmin.sh
 sudo ./webmin.sh -f
 wait_for_lock
