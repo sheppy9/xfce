@@ -20,7 +20,7 @@ sudo nala install xfce4-session xfce4-terminal -y
 # ##################################################
 sudo nala update
 # Default xfce4 packages
-sudo nala install xfwm4 xfce4-appfinder xfconf xfce4-panel xfce4-power-manager xfce4-settings xfce4-notifyd xfce4-panel-profiles xfce4-taskmanager -y
+sudo nala install xfwm4 xfce4-appfinder xfconf xfce4-panel xfce4-panel-profiles xfce4-power-manager xfce4-settings xfce4-notifyd xfce4-panel-profiles xfce4-taskmanager -y
 # Utilities
 sudo nala install thunar tumbler thunar-volman catfish ristretto parole gedit -y
 # xfce plugins
