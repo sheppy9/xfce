@@ -1,4 +1,4 @@
-<link rel="icon" type="image/x-icon" href="https://sheppy9.github.io/xfce/assets/favicon.png">
+<link rel="icon" href="https://sheppy9.github.io/xfce/assets/favicon.png">
 
 # Scripts
 - [Desktop](desktop.sh)
