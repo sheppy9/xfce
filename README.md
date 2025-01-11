@@ -1,5 +1,3 @@
-<link rel="icon" href="https://sheppy9.github.io/xfce/assets/favicon.png">
-
 # Scripts
 - [Desktop](desktop.sh)
 	- `wget https://raw.githubusercontent.com/sheppy9/xfce/master/desktop.sh`
