@@ -22,7 +22,7 @@ sudo nala update
 # Default xfce4 packages
 sudo nala install xfwm4 xfce4-appfinder xfconf xfce4-panel xfce4-panel-profiles xfce4-power-manager xfce4-settings xfce4-notifyd xfce4-panel-profiles xfce4-taskmanager -y
 # Utilities
-sudo nala install thunar tumbler thunar-volman catfish ristretto parole gedit -y
+sudo nala install thunar tumbler thunar-volman catfish ristretto parole gedit xcape -y
 # xfce plugins
 sudo nala install xfce4-clipman-plugin xfce4-datetime-plugin xfce4-diskperf-plugin xfce4-fsguard-plugin xfce4-mount-plugin xfce4-mpc-plugin xfce4-systemload-plugin xfce4-timer-plugin xfce4-whiskermenu-plugin -y
 # Themes
@@ -103,9 +103,13 @@ xfconf-query -c xfce4-keyboard-shortcuts -t 'string' -np '/commands/custom/<Shif
 xfconf-query -c xfce4-keyboard-shortcuts -t 'string' -np '/commands/custom/<Super>e' -s 'exo-open --launch FileManager'
 xfconf-query -c xfce4-keyboard-shortcuts -t 'string' -np '/commands/custom/<Ctrl><Alt>Delete' -s 'xfce4-session-logout'
 xfconf-query -c xfce4-keyboard-shortcuts -t 'string' -np '/commands/custom/<Super>t' -s 'exo-open --launch TerminalEmulator'
+xfconf-query -c xfce4-keyboard-shortcuts -t 'string' -np '/commands/custom/<Ctrl>Escape' -s 'xfce4-popup-whiskermenu'
 
 xfconf-query -c xfce4-keyboard-shortcuts -t 'string' -np '/xfwm4/custom/<Super>q' -s 'close_window_key'
 xfconf-query -c xfce4-keyboard-shortcuts -t 'string' -np '/xfwm4/custom/<Super>d' -s 'show_desktop_key'
+
+# Required to configure Windows button to open whiskermenu without clashing other windows + <key> shortcut
+/usr/bin/xcape -e 'Super_L=Control_L|Escape'
 
 # ##################################################
 # Language
