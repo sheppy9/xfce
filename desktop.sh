@@ -76,13 +76,13 @@ sudo nala install vivaldi-stable -y
 # Assets
 # ##################################################
 image_names=(
-	"plasma-workspace-wallpapers-flow-5120x2880.jpg"
-	"plasma-workspace-wallpapers-elaran-2560x1600.png"
-	"luffy-gear-6-5000x2812.png"
+	"assets/images/plasma-workspace-wallpapers-flow-5120x2880.jpg"
+	"assets/images/plasma-workspace-wallpapers-elaran-2560x1600.png"
+	"assets/images/luffy-gear-6-5000x2812.png"
 )
 
 for image_name in "${image_names[@]}"; do
-	sudo curl -L -o "/usr/share/images/desktop-base/${image_name}" "https://github.com/sheppy9/xfce/raw/master/assets/${image_name}"
+	sudo curl -L -o "/usr/share/images/desktop-base/${image_name}" "https://github.com/sheppy9/xfce/raw/master/${image_name}"
 done
 
 # ##################################################
