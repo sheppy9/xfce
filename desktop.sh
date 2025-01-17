@@ -205,5 +205,8 @@ sudo apt-get remove --purge -y `dpkg -l | grep '^rc' | awk '{print $2}'`
 # ##################################################
 # Reboot
 # ##################################################
-echo "Please reboot to apply all the changes"
+echo ""
+echo "##################################################"
+echo "##### Please reboot to apply all the changes #####"
+echo "##################################################"
 # sudo reboot now
