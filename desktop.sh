@@ -2,8 +2,8 @@
 # Debian minimal installation setup
 # ##################################################
 # NOTE: install without root account
-sudo apt install nala wget curl -y
-sudo nala install xfce4-session xfce4-terminal -y
+sudo apt -y install wget curl
+sudo apt -y install xfce4-session xfce4-terminal
 
 # ##################################################
 # Sudo setup
@@ -18,31 +18,31 @@ sudo nala install xfce4-session xfce4-terminal -y
 # Repo setup
 
 # - Vivaldi
-# curl -fsSL https://repo.vivaldi.com/stable/linux_signing_key.pub | sudo gpg --dearmor -o /usr/share/keyrings/vivaldi-archive-keyring.gpg
-# echo "deb [arch=amd64 signed-by=/usr/share/keyrings/vivaldi-archive-keyring.gpg] https://repo.vivaldi.com/stable/deb/ stable main" | sudo tee /etc/apt/sources.list.d/vivaldi.list
+curl -fsSL https://repo.vivaldi.com/stable/linux_signing_key.pub | sudo gpg --dearmor -o /usr/share/keyrings/vivaldi-archive-keyring.gpg
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/vivaldi-archive-keyring.gpg] https://repo.vivaldi.com/stable/deb/ stable main" | sudo tee /etc/apt/sources.list.d/vivaldi.list
 
 # - Firefox
-wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | sudo tee /etc/apt/keyrings/packages.mozilla.org.asc > /dev/null
-echo "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main" | sudo tee -a /etc/apt/sources.list.d/mozilla.list > /dev/null
-echo -e 'Package: *\nPin: origin packages.mozilla.org\nPin-Priority: 1000' | sudo tee /etc/apt/preferences.d/mozilla
+# wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | sudo tee /etc/apt/keyrings/packages.mozilla.org.asc > /dev/null
+# echo "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main" | sudo tee -a /etc/apt/sources.list.d/mozilla.list > /dev/null
+# echo -e 'Package: *\nPin: origin packages.mozilla.org\nPin-Priority: 1000' | sudo tee /etc/apt/preferences.d/mozilla
 
 # ##################################################
 # Applications
 # ##################################################
-sudo nala update && sudo apt-get update
+sudo apt update && sudo apt-get update
 # Default xfce4 packages
-sudo nala install xfwm4 xfce4-appfinder xfconf xfce4-panel xfce4-power-manager xfce4-settings xfce4-notifyd xfce4-panel-profiles xfce4-taskmanager -y
+sudo apt -y install xfwm4 xfce4-appfinder xfconf xfce4-panel xfce4-power-manager xfce4-settings xfce4-notifyd xfce4-panel-profiles xfce4-taskmanager
 # Utilities
-sudo nala install firefox-devedition thunar tumbler thunar-volman catfish ristretto parole gedit xcape -y
+sudo apt -y install firefox-devedition thunar tumbler thunar-volman catfish ristretto parole gedit xcape
 # xfce plugins
-sudo nala install xfce4-clipman-plugin xfce4-datetime-plugin xfce4-diskperf-plugin xfce4-fsguard-plugin xfce4-mount-plugin xfce4-mpc-plugin xfce4-systemload-plugin xfce4-timer-plugin xfce4-whiskermenu-plugin -y
+sudo apt -y install xfce4-clipman-plugin xfce4-datetime-plugin xfce4-diskperf-plugin xfce4-fsguard-plugin xfce4-mount-plugin xfce4-mpc-plugin xfce4-systemload-plugin xfce4-timer-plugin xfce4-whiskermenu-plugin
 # Themes
-sudo nala install arc-theme -y
+sudo apt -y install arc-theme
 # Other interested packages
-sudo nala install git flameshot keepassxc baobab net-tools file-roller gnome-calculator gnome-clocks remmina bspwm sxhkd -y
-sudo nala install qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils libguestfs-tools genisoimage virtinst libosinfo-bin virt-manager -y
-sudo nala install ibus ibus-libthai ibus-pinyin -y
-# sudo nala install vivaldi-stable -y
+sudo apt -y install git flameshot keepassxc baobab net-tools file-roller gnome-calculator gnome-clocks remmina bspwm sxhkd
+sudo apt -y install qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils libguestfs-tools genisoimage virtinst libosinfo-bin virt-manager
+sudo apt -y install ibus ibus-libthai ibus-pinyin
+# sudo apt -y install vivaldi-stable
 
 # ##################################################
 # Applications (via .deb)
@@ -58,7 +58,7 @@ for file in "${DEB_FILES[@]}"; do
 	name=$(echo "$file" | cut -d' ' -f1)
 	url=$(echo "$file" | cut -d' ' -f2-)
 	wget -O "$name.deb" "$url"
-	sudo nala install "$name.deb" -y
+	sudo apt -y install "$name.deb"
 	rm "$name.deb"
 done
 
@@ -71,20 +71,20 @@ done
 # ##################################################
 # echo "deb https://packages.adoptium.net/artifactory/deb $(awk -F= '/^VERSION_CODENAME/{print$2}' /etc/os-release) main" | sudo tee /etc/apt/sources.list.d/adoptium.list
 # wget -qO - https://packages.adoptium.net/artifactory/api/gpg/key/public | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/adoptium.gpg > /dev/null
-# sudo nala install apt-transport-https gpg temurin-8-jdk temurin-11-jdk temurin-17-jdk temurin-21-jdk -y
+# sudo apt install apt-transport-https gpg temurin-8-jdk temurin-11-jdk temurin-17-jdk temurin-21-jdk -y
 
 # ##################################################
 # Assets
 # ##################################################
 image_names=(
-	"assets/images/plasma-workspace-wallpapers-flow-5120x2880.jpg"
-	"assets/images/plasma-workspace-wallpapers-elaran-2560x1600.png"
-	"assets/images/luffy-gear-6-5000x2812.png"
-	"assets/configs/xfce4-panel-config.tar.bz2"
+	"images/plasma-workspace-wallpapers-flow-5120x2880.jpg"
+	"images/plasma-workspace-wallpapers-elaran-2560x1600.png"
+	"images/luffy-gear-6-5000x2812.png"
+	"configs/xfce4-panel-config.tar.bz2"
 )
 
 for image_name in "${image_names[@]}"; do
-	sudo curl -L -o "/usr/share/images/desktop-base/${image_name}" "https://github.com/sheppy9/xfce/raw/master/${image_name}"
+	sudo curl -L -o "/usr/share/images/desktop-base/${image_name}" "https://github.com/sheppy9/xfce/raw/master/assets/${image_name}"
 done
 
 # ##################################################
@@ -195,13 +195,15 @@ xfconf-query -c xfwm4 -t 'string' -np '/general/title_alignment' -s 'left'
 # ##################################################
 # APT cleanup
 # ##################################################
-sudo nala update
-sudo nala upgrade -y
-sudo nala autoremove -y
-sudo nala autopurge -y
+sudo apt -y update
+sudo apt -y upgrade
+sudo apt -y autoremove
+sudo apt -y autoclean
+sudo apt -y autopurge
+sudo apt-get remove --purge -y `dpkg -l | grep '^rc' | awk '{print $2}'`
 
 # ##################################################
 # Reboot
 # ##################################################
-# echo "Reboot is required. Enter password to reboot"
-sudo reboot now
+echo "Please reboot to apply all the changes"
+# sudo reboot now
