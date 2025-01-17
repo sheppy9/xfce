@@ -76,15 +76,16 @@ done
 # ##################################################
 # Assets
 # ##################################################
-image_names=(
-	"images/plasma-workspace-wallpapers-flow-5120x2880.jpg"
-	"images/plasma-workspace-wallpapers-elaran-2560x1600.png"
-	"images/luffy-gear-6-5000x2812.png"
-	"configs/xfce4-panel-config.tar.bz2"
+declare -A file_mappings=(
+	["images/plasma-workspace-wallpapers-flow-5120x2880.jpg"]="/usr/share/images/desktop-base/plasma-workspace-wallpapers-flow-5120x2880.jpg"
+	["images/plasma-workspace-wallpapers-elaran-2560x1600.png"]="/usr/share/images/desktop-base/plasma-workspace-wallpapers-elaran-2560x1600.png"
+	["images/luffy-gear-6-5000x2812.png"]="/usr/share/images/desktop-base/luffy-gear-6-5000x2812.png"
+	["configs/xfce4-panel-config.tar.bz2"]="./xfce4-panel-config.tar.bz2"
 )
 
-for image_name in "${image_names[@]}"; do
-	sudo curl -L -o "/usr/share/images/desktop-base/${image_name}" "https://github.com/sheppy9/xfce/raw/master/assets/${image_name}"
+for source_file in "${!file_mappings[@]}"; do
+	destination="${file_mappings[$source_file]}"
+	sudo wget "$destination" "https://github.com/sheppy9/xfce/raw/master/assets/$source_file"
 done
 
 # ##################################################
