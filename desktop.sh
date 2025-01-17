@@ -48,10 +48,10 @@ sudo nala install ibus ibus-libthai ibus-pinyin -y
 # Applications (via .deb)
 # ##################################################
 DEB_FILES=(
-	"vscode https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
-	"warp-terminal https://app.warp.dev/download?package=deb"
-	"rambox https://rambox.app/api/download?os=linux&package=deb"
-	"ms-edge https://go.microsoft.com/fwlink?linkid=2149051&brand=M102"
+	# "vscode https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
+	# "warp-terminal https://app.warp.dev/download?package=deb"
+	# "rambox https://rambox.app/api/download?os=linux&package=deb"
+	# "ms-edge https://go.microsoft.com/fwlink?linkid=2149051&brand=M102"
 )
 
 for file in "${DEB_FILES[@]}"; do
