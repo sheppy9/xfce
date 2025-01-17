@@ -30,7 +30,7 @@ echo -e 'Package: *\nPin: origin packages.mozilla.org\nPin-Priority: 1000' | sud
 # ##################################################
 sudo apt update
 # Default xfce4 packages
-sudo apt -y install xfwm4 xfce4-session xfce4-terminal xfce4-appfinder xfconf xfce4-panel xfce4-power-manager xfce4-settings xfce4-notifyd xfce4-panel-profiles xfce4-taskmanager
+sudo apt -y install xfce4-session xfce4-terminal xfwm4 xfce4-appfinder xfconf xfce4-panel xfce4-power-manager xfce4-settings xfce4-notifyd xfce4-panel-profiles xfce4-taskmanager
 # Utilities
 sudo apt -y install firefox-devedition thunar tumbler thunar-volman catfish ristretto parole gedit xcape git flameshot keepassxc baobab net-tools file-roller gnome-calculator gnome-clocks remmina bspwm sxhkd
 # xfce plugins
