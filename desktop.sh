@@ -85,7 +85,7 @@ declare -A file_mappings=(
 
 for source_file in "${!file_mappings[@]}"; do
 	destination="${file_mappings[$source_file]}"
-	sudo wget "$destination" "https://github.com/sheppy9/xfce/raw/master/assets/$source_file"
+	sudo wget -O "$destination" "https://github.com/sheppy9/xfce/raw/master/assets/$source_file"
 done
 
 # ##################################################
