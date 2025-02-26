@@ -14,17 +14,6 @@ sudo apt -y install wget curl
 # chmod 440 /etc/sudoers.d/my-sudoers
 # exit
 
-# Repo setup
-
-# - Vivaldi
-# curl -fsSL https://repo.vivaldi.com/stable/linux_signing_key.pub | sudo gpg --dearmor -o /usr/share/keyrings/vivaldi-archive-keyring.gpg
-# echo "deb [arch=amd64 signed-by=/usr/share/keyrings/vivaldi-archive-keyring.gpg] https://repo.vivaldi.com/stable/deb/ stable main" | sudo tee /etc/apt/sources.list.d/vivaldi.list
-
-# - Firefox
-wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | sudo tee /etc/apt/keyrings/packages.mozilla.org.asc > /dev/null
-echo "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main" | sudo tee -a /etc/apt/sources.list.d/mozilla.list > /dev/null
-echo -e 'Package: *\nPin: origin packages.mozilla.org\nPin-Priority: 1000' | sudo tee /etc/apt/preferences.d/mozilla
-
 # ##################################################
 # Applications
 # ##################################################
@@ -32,15 +21,13 @@ sudo apt update
 # Default xfce4 packages
 sudo apt -y install xfce4-session xfce4-terminal xfwm4 xfce4-appfinder xfconf xfce4-panel xfce4-power-manager xfce4-settings xfce4-notifyd xfce4-panel-profiles xfce4-taskmanager
 # Utilities
-sudo apt -y install network-manager-gnome firefox-devedition thunar tumbler thunar-volman catfish ristretto parole gedit xcape git flameshot keepassxc baobab net-tools file-roller gnome-calculator gnome-clocks remmina bspwm sxhkd btop rsync
+sudo apt -y install network-manager-gnome firefox-esr thunar tumbler thunar-volman catfish ristretto parole gedit xcape git flameshot keepassxc baobab net-tools file-roller gnome-calculator gnome-clocks remmina bspwm sxhkd btop rsync
 # xfce plugins
 sudo apt -y install xfce4-clipman-plugin xfce4-datetime-plugin xfce4-diskperf-plugin xfce4-fsguard-plugin xfce4-mount-plugin xfce4-mpc-plugin xfce4-systemload-plugin xfce4-timer-plugin xfce4-whiskermenu-plugin xfce4-pulseaudio-plugin
 # Themes
 sudo apt -y install arc-theme
 # Virtual Machine
 sudo apt -y install qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils libguestfs-tools genisoimage virtinst libosinfo-bin virt-manager
-# Browser
-# sudo apt -y install vivaldi-stable
 # Language
 # sudo apt -y install ibus ibus-libthai ibus-pinyin
 
