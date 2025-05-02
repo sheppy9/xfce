@@ -21,9 +21,9 @@ sudo apt update
 # Default xfce4 packages
 # sudo apt -y install xfce4-session xfce4-terminal xfwm4 xfce4-appfinder xfconf xfce4-panel xfce4-power-manager xfce4-settings xfce4-notifyd xfce4-taskmanager
 # Default utilities
-# sudo apt -y install network-manager-gnome firefox-esr thunar tumbler thunar-volman catfish ristretto parole gedit xcape baobab net-tools file-roller gnome-calculator gnome-clocks remmina bspwm sxhkd
+# sudo apt -y install network-manager-gnome firefox-esr thunar tumbler thunar-volman catfish ristretto parole gedit baobab net-tools file-roller gnome-calculator gnome-clocks remmina bspwm sxhkd
 # Utilities
-sudo apt -y install wget curl xfce4-panel-profiles git flameshot keepassxc btop rsync
+sudo apt -y install wget curl xfce4-panel-profiles xcape git flameshot keepassxc btop rsync
 # xfce plugins
 # sudo apt -y install xfce4-clipman-plugin xfce4-datetime-plugin xfce4-diskperf-plugin xfce4-fsguard-plugin xfce4-mount-plugin xfce4-mpc-plugin xfce4-systemload-plugin xfce4-timer-plugin xfce4-whiskermenu-plugin xfce4-pulseaudio-plugin
 # Themes
