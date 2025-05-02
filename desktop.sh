@@ -2,7 +2,7 @@
 # Debian minimal installation setup
 # ##################################################
 # NOTE: install without root account
-sudo apt -y install wget curl
+# sudo apt -y install wget curl
 
 # ##################################################
 # Sudo setup
@@ -19,11 +19,13 @@ sudo apt -y install wget curl
 # ##################################################
 sudo apt update
 # Default xfce4 packages
-sudo apt -y install xfce4-session xfce4-terminal xfwm4 xfce4-appfinder xfconf xfce4-panel xfce4-power-manager xfce4-settings xfce4-notifyd xfce4-panel-profiles xfce4-taskmanager
+# sudo apt -y install xfce4-session xfce4-terminal xfwm4 xfce4-appfinder xfconf xfce4-panel xfce4-power-manager xfce4-settings xfce4-notifyd xfce4-panel-profiles xfce4-taskmanager
+# Default utilities
+# sudo apt -y install network-manager-gnome firefox-esr thunar tumbler thunar-volman catfish ristretto parole gedit xcape baobab net-tools file-roller gnome-calculator gnome-clocks remmina bspwm sxhkd
 # Utilities
-sudo apt -y install network-manager-gnome firefox-esr thunar tumbler thunar-volman catfish ristretto parole gedit xcape git flameshot keepassxc baobab net-tools file-roller gnome-calculator gnome-clocks remmina bspwm sxhkd btop rsync
+sudo apt -y install wget curl git flameshot keepassxc btop rsync
 # xfce plugins
-sudo apt -y install xfce4-clipman-plugin xfce4-datetime-plugin xfce4-diskperf-plugin xfce4-fsguard-plugin xfce4-mount-plugin xfce4-mpc-plugin xfce4-systemload-plugin xfce4-timer-plugin xfce4-whiskermenu-plugin xfce4-pulseaudio-plugin
+# sudo apt -y install xfce4-clipman-plugin xfce4-datetime-plugin xfce4-diskperf-plugin xfce4-fsguard-plugin xfce4-mount-plugin xfce4-mpc-plugin xfce4-systemload-plugin xfce4-timer-plugin xfce4-whiskermenu-plugin xfce4-pulseaudio-plugin
 # Themes
 sudo apt -y install arc-theme
 # Virtual Machine
@@ -66,7 +68,6 @@ done
 declare -A file_mappings=(
 	["images/plasma-workspace-wallpapers-flow-5120x2880.jpg"]="/usr/share/images/desktop-base/plasma-workspace-wallpapers-flow-5120x2880.jpg"
 	["images/plasma-workspace-wallpapers-elaran-2560x1600.png"]="/usr/share/images/desktop-base/plasma-workspace-wallpapers-elaran-2560x1600.png"
-	["images/luffy-gear-6-5000x2812.png"]="/usr/share/images/desktop-base/luffy-gear-6-5000x2812.png"
 	["configs/xfce4-panel-config.tar.bz2"]="./xfce4-panel-config.tar.bz2"
 )
 
@@ -161,9 +162,9 @@ xfconf-query -c xfce4-screensaver -t 'bool' -np '/saver/enabled' -s 'false'
 xfconf-query -c xfce4-session -t 'bool' -np '/general/SaveOnExit' -s 'false'
 
 # Terminal
-xfconf-query -c xfce4-terminal -t 'string' -np '/misc-cursor-shape' -s 'TERMINAL_CURSOR_SHAPE_IBEAM'
-xfconf-query -c xfce4-terminal -t 'bool' -np '/misc-cursor-blinks' -s 'true'
-xfconf-query -c xfce4-terminal -t 'bool' -np '/misc-copy-on-select' -s 'true'
+# xfconf-query -c xfce4-terminal -t 'string' -np '/misc-cursor-shape' -s 'TERMINAL_CURSOR_SHAPE_IBEAM'
+# xfconf-query -c xfce4-terminal -t 'bool' -np '/misc-cursor-blinks' -s 'true'
+# xfconf-query -c xfce4-terminal -t 'bool' -np '/misc-copy-on-select' -s 'true'
 
 # Window Manager
 xfconf-query -c xfwm4 -t 'int' -np '/general/cycbel-tabwin-mode' -s '1'
