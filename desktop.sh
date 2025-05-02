@@ -166,6 +166,9 @@ xfconf-query -c xfce4-session -t 'bool' -np '/general/SaveOnExit' -s 'false'
 # xfconf-query -c xfce4-terminal -t 'bool' -np '/misc-cursor-blinks' -s 'true'
 # xfconf-query -c xfce4-terminal -t 'bool' -np '/misc-copy-on-select' -s 'true'
 
+# Set terminal tab function to ignore case
+echo 'set completion-ignore-case On' | sudo tee -a /etc/inputrc
+
 # Window Manager
 xfconf-query -c xfwm4 -t 'int' -np '/general/cycbel-tabwin-mode' -s '1'
 xfconf-query -c xfwm4 -t 'bool' -np '/general/cycle_raise' -s 'true'
