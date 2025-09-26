@@ -21,7 +21,7 @@ sudo apt update
 # Default xfce4 packages
 # sudo apt -y install xfce4-session xfce4-terminal xfwm4 xfce4-appfinder xfconf xfce4-panel xfce4-power-manager xfce4-settings xfce4-notifyd xfce4-taskmanager
 # Default utilities
-# sudo apt -y install network-manager-gnome firefox-esr thunar tumbler thunar-volman catfish ristretto parole gedit baobab net-tools file-roller gnome-calculator gnome-clocks remmina bspwm sxhkd
+# sudo apt -y install network-manager-gnome firefox-esr thunar tumbler thunar-volman catfish ristretto parole gedit baobab net-tools file-roller gnome-calculator gnome-clocks remmina bspwm sxhkd usb-creator-gtk
 # Utilities
 sudo apt -y install wget curl xfce4-panel-profiles xcape git flameshot keepassxc btop rsync
 # xfce plugins
