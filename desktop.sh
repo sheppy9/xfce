@@ -23,13 +23,13 @@ sudo apt update
 # Default utilities
 # sudo apt -y install network-manager-gnome firefox-esr thunar tumbler thunar-volman catfish ristretto parole gedit baobab net-tools file-roller gnome-calculator gnome-clocks remmina bspwm sxhkd usb-creator-gtk
 # Utilities
-sudo apt -y install wget curl xfce4-panel-profiles xcape git flameshot keepassxc btop rsync
+sudo apt -y install wget curl xfce4-panel-profiles xcape git flameshot keepassxc btop rclone
 # xfce plugins
 # sudo apt -y install xfce4-clipman-plugin xfce4-datetime-plugin xfce4-diskperf-plugin xfce4-fsguard-plugin xfce4-mount-plugin xfce4-mpc-plugin xfce4-systemload-plugin xfce4-timer-plugin xfce4-whiskermenu-plugin xfce4-pulseaudio-plugin
 # Themes
 sudo apt -y install arc-theme
 # Virtual Machine
-sudo apt -y install qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils libguestfs-tools genisoimage virtinst libosinfo-bin virt-manager
+# sudo apt -y install qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils libguestfs-tools genisoimage virtinst libosinfo-bin virt-manager
 # Language
 # sudo apt -y install ibus ibus-libthai ibus-pinyin
 
@@ -38,8 +38,6 @@ sudo apt -y install qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils 
 # ##################################################
 DEB_FILES=(
 	# "vscode https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
-	# "warp-terminal https://app.warp.dev/download?package=deb"
-	# "rambox https://rambox.app/api/download?os=linux&package=deb"
 	# "ms-edge https://go.microsoft.com/fwlink?linkid=2149051&brand=M102"
 )
 
@@ -66,9 +64,9 @@ done
 # Assets
 # ##################################################
 declare -A file_mappings=(
+	["configs/xfce4-panel-config.tar.bz2"]="./xfce4-panel-config.tar.bz2"
 	["images/plasma-workspace-wallpapers-flow-5120x2880.jpg"]="/usr/share/images/desktop-base/plasma-workspace-wallpapers-flow-5120x2880.jpg"
 	["images/plasma-workspace-wallpapers-elaran-2560x1600.png"]="/usr/share/images/desktop-base/plasma-workspace-wallpapers-elaran-2560x1600.png"
-	["configs/xfce4-panel-config.tar.bz2"]="./xfce4-panel-config.tar.bz2"
 )
 
 for source_file in "${!file_mappings[@]}"; do
@@ -80,16 +78,14 @@ done
 # Keyboard shortcuts
 # ##################################################
 xfconf-query -c xfce4-keyboard-shortcuts -t 'string' -np '/commands/custom/<Super>c' -s 'code'
+xfconf-query -c xfce4-keyboard-shortcuts -t 'string' -np '/commands/custom/<Super>n' -s 'gedit'
 xfconf-query -c xfce4-keyboard-shortcuts -t 'string' -np '/commands/custom/<Super>f' -s 'catfish'
 xfconf-query -c xfce4-keyboard-shortcuts -t 'string' -np '/commands/custom/<Super>l' -s 'xflock4'
-xfconf-query -c xfce4-keyboard-shortcuts -t 'string' -np '/commands/custom/<Super>n' -s 'gedit'
 xfconf-query -c xfce4-keyboard-shortcuts -t 'string' -np '/commands/custom/<Super>k' -s 'keepass2'
 xfconf-query -c xfce4-keyboard-shortcuts -t 'string' -np '/commands/custom/<Super>v' -s 'virt-manager'
 xfconf-query -c xfce4-keyboard-shortcuts -t 'string' -np '/commands/custom/<Super>s' -s 'xfce4-appfinder'
 xfconf-query -c xfce4-keyboard-shortcuts -t 'string' -np '/commands/custom/<Super>r' -s 'remmina-file-wrapper'
 xfconf-query -c xfce4-keyboard-shortcuts -t 'string' -np '/commands/custom/<Super><Shift>s' -s 'flameshot gui'
-# Replace by <super>w (required confirmation)
-# xfconf-query -c xfce4-keyboard-shortcuts -t 'string' -np '/commands/custom/<Super>b' -s 'exo-open --launch WebBrowser'
 xfconf-query -c xfce4-keyboard-shortcuts -t 'string' -np '/commands/custom/<Shift><Ctrl>Escape' -s 'xfce4-taskmanager'
 xfconf-query -c xfce4-keyboard-shortcuts -t 'string' -np '/commands/custom/<Super>e' -s 'exo-open --launch FileManager'
 xfconf-query -c xfce4-keyboard-shortcuts -t 'string' -np '/commands/custom/<Ctrl><Alt>Delete' -s 'xfce4-session-logout'
@@ -135,10 +131,20 @@ xfconf-query -c thunar -t 'string' -np '/misc-date-style' -s 'THUNAR_DATE_STYLE_
 xfconf-query -c thunar -t 'string' -np '/shortcuts-icon-size' -s 'THUNAR_ICON_SIZE_16'
 xfconf-query -c thunar -t 'bool' -np '/misc-open-new-window-as-tab' -s 'true'
 xfconf-query -c thunar -t 'bool' -np '/misc-full-path-in-tab-title' -s 'true'
+xfconf-query -c thunar -t 'bool' -np '/misc-confirm-close-multiple-tabs' -s 'false'
+xfconf-query -c thunar -t 'bool' -np '/misc-single-click' -s 'false'
+xfconf-query -c thunar -t 'bool' -np '/misc-full-path-in-tab-title' -s 'true'
+xfconf-query -c thunar -t 'string' -np '/misc-transfer-use-partial' -s 'THUNAR_USE_PARTIAL_MODE_ALWAYS'
+xfconf-query -c thunar -t 'string' -np '/misc-transfer-verify-file' -s 'THUNAR_VERIFY_FILE_MODE_ALWAYS'
 
 # App-Finder
-xfconf-query -c xfce4-appfinder -t 'bool' -np '/always-center' -s 'true'
 xfconf-query -c xfc4-appfinder -t 'int' -np '/item-icon-size' -s '0'
+xfconf-query -c xfce4-appfinder -t 'bool' -np '/icon-view' -s 'true'
+xfconf-query -c xfce4-appfinder -t 'bool' -np '/always-center' -s 'true'
+xfconf-query -c xfce4-appfinder -t 'bool' -np '/sort-by-frecency' -s 'true'
+xfconf-query -c xfce4-appfinder -t 'bool' -np '/text-beside-icons' -s 'true'
+xfconf-query -c xfce4-appfinder -t 'bool' -np '/hide-category-pane' -s 'true'
+xfconf-query -c xfce4-appfinder -t 'bool' -np '/hide-window-decorations' -s 'true'
 
 # Desktop
 xfconf-query -c xfce4-desktop -t 'bool' -np '/desktop-menu/show-delete' -s 'false'
@@ -152,9 +158,9 @@ xfconf-query -c xfce4-desktop -t 'string' -np '/backdrop/screen0/monitor0/worksp
 xfdesktop --quit && xfdesktop &
 
 # Power Manager
-xfconf-query -c xfc4-power-manager -t 'int' -np '/xfce4-power-manager/power-button-action' -s '4'
 xfconf-query -c xfc4-power-manager -t 'int' -np '/xfce4-power-manager/blank-on-ac' -s '0'
 xfconf-query -c xfc4-power-manager -t 'bool' -np '/xfce4-power-manager/dpms-enabled' -s 'false'
+xfconf-query -c xfc4-power-manager -t 'int' -np '/xfce4-power-manager/power-button-action' -s '4'
 
 # Screensaver
 xfconf-query -c xfce4-screensaver -t 'bool' -np '/saver/enabled' -s 'false'
@@ -163,21 +169,28 @@ xfconf-query -c xfce4-screensaver -t 'bool' -np '/saver/enabled' -s 'false'
 xfconf-query -c xfce4-session -t 'bool' -np '/general/SaveOnExit' -s 'false'
 
 # Terminal
-# xfconf-query -c xfce4-terminal -t 'string' -np '/misc-cursor-shape' -s 'TERMINAL_CURSOR_SHAPE_IBEAM'
-# xfconf-query -c xfce4-terminal -t 'bool' -np '/misc-cursor-blinks' -s 'true'
-# xfconf-query -c xfce4-terminal -t 'bool' -np '/misc-copy-on-select' -s 'true'
+xfconf-query -c xfce4-terminal -t 'bool' -np '/misc-cursor-blinks' -s 'true'
+xfconf-query -c xfce4-terminal -t 'bool' -np '/misc-copy-on-select' -s 'true'
+xfconf-query -c xfce4-terminal -t 'bool' -np '/misc-confirm-close' -s 'false'
+xfconf-query -c xfce4-terminal -t 'bool' -np '/misc-menubar-default' -s 'true'
+xfconf-query -c xfce4-terminal -t 'bool' -np '/misc-show-unsafe-paste-dialog' -s 'false'
+xfconf-query -c xfce4-terminal -t 'string' -np '/misc-cursor-shape' -s 'TERMINAL_CURSOR_SHAPE_IBEAM'
+xfconf-query -c xfce4-terminal -t 'string' -np '/text-blink-mode' -s 'TERMINAL_TEXT_BLINK_MODE_FOCUSED'
+xfconf-query -c xfce4-terminal -t 'string' -np '/misc-right-click-action' -s 'TERMINAL_RIGHT_CLICK_ACTION_PASTE_CLIPBOARD'
 
 # Set terminal tab function to ignore case
 echo 'set completion-ignore-case On' | sudo tee -a /etc/inputrc
 
 # Window Manager
-xfconf-query -c xfwm4 -t 'int' -np '/general/cycbel-tabwin-mode' -s '1'
 xfconf-query -c xfwm4 -t 'bool' -np '/general/cycle_raise' -s 'true'
-xfconf-query -c xfwm4 -t 'bool' -np '/general/cycle_workspaces' -s 'true'
+xfconf-query -c xfwm4 -t 'int' -np '/general/cycbel-tabwin-mode' -s '1'
 xfconf-query -c xfwm4 -t 'bool' -np '/general/cycle_minimized' -s 'true'
+xfconf-query -c xfwm4 -t 'bool' -np '/general/cycle_workspaces' -s 'true'
+xfconf-query -c xfwm4 -t 'bool' -np '/general/cycle_apps_only' -s 'false'
+xfconf-query -c xfwm4 -t 'bool' -np '/general/full_width_title' -s 'true'
+xfconf-query -c xfwm4 -t 'string' -np '/general/title_alignment' -s 'left'
 xfconf-query -c xfwm4 -t 'string' -np '/general/activate_action' -s 'switch'
 xfconf-query -c xfwm4 -t 'string' -np '/general/placeholder_mode' -s 'center'
-xfconf-query -c xfwm4 -t 'string' -np '/general/title_alignment' -s 'left'
 
 # xfconf-query -c xsettings -t 'string' -np '' -s ''
 # xfconf-query -c xsettings -t 'int' -np '' -s ''
