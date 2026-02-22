@@ -63,16 +63,16 @@ done
 # ##################################################
 # Assets
 # ##################################################
-declare -A file_mappings=(
-	["configs/xfce4-panel-config.tar.bz2"]="./xfce4-panel-config.tar.bz2"
-	["images/plasma-workspace-wallpapers-flow-5120x2880.jpg"]="/usr/share/images/desktop-base/plasma-workspace-wallpapers-flow-5120x2880.jpg"
-	["images/plasma-workspace-wallpapers-elaran-2560x1600.png"]="/usr/share/images/desktop-base/plasma-workspace-wallpapers-elaran-2560x1600.png"
-)
-
-for source_file in "${!file_mappings[@]}"; do
-	destination="${file_mappings[$source_file]}"
-	sudo wget -O "$destination" "https://github.com/sheppy9/xfce/raw/master/assets/$source_file"
-done
+# declare -A file_mappings=(
+# 	["configs/xfce4-panel-config.tar.bz2"]="./xfce4-panel-config.tar.bz2"
+# 	["images/plasma-workspace-wallpapers-flow-5120x2880.jpg"]="/usr/share/images/desktop-base/plasma-workspace-wallpapers-flow-5120x2880.jpg"
+# 	["images/plasma-workspace-wallpapers-elaran-2560x1600.png"]="/usr/share/images/desktop-base/plasma-workspace-wallpapers-elaran-2560x1600.png"
+# )
+#
+# for source_file in "${!file_mappings[@]}"; do
+# 	destination="${file_mappings[$source_file]}"
+# 	sudo wget -O "$destination" "https://github.com/sheppy9/xfce/raw/master/assets/$source_file"
+# done
 
 # ##################################################
 # Keyboard shortcuts
@@ -152,7 +152,7 @@ xfconf-query -c xfce4-desktop -t 'bool' -np '/desktop-icons/file-icons/show-home
 xfconf-query -c xfce4-desktop -t 'bool' -np '/desktop-icons/file-icons/show-trash' -s 'false'
 xfconf-query -c xfce4-desktop -t 'bool' -np '/desktop-icons/file-icons/show-removable' -s 'false'
 xfconf-query -c xfce4-desktop -t 'bool' -np '/desktop-icons/file-icons/show-filesystem' -s 'false'
-xfconf-query -c xfce4-desktop -t 'string' -np '/backdrop/screen0/monitor0/workspace0/last-image' -s '/usr/share/images/desktop-base/plasma-workspace-wallpapers-flow-5120x2880.jpg'
+# xfconf-query -c xfce4-desktop -t 'string' -np '/backdrop/screen0/monitor0/workspace0/last-image' -s '/usr/share/images/desktop-base/plasma-workspace-wallpapers-flow-5120x2880.jpg'
 
 # Reload desktop
 xfdesktop --quit && xfdesktop &
