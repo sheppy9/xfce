@@ -10,9 +10,10 @@ wait_for_lock() {
 # Install common utils
 # ##################################################
 wait_for_lock
-sudo apt-get update
+sudo apt-get -y update
 wait_for_lock
-sudo apt-get install -y net-tools curl openssh-server fuse3
+# sudo apt-get -y install net-tools
+sudo apt-get -y install curl openssh-server fuse3
 
 # ##################################################
 # Install webmin

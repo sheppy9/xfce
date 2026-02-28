@@ -37,7 +37,7 @@ sudo apt -y install arc-theme
 # Applications (via .deb)
 # ##################################################
 DEB_FILES=(
-	# "vscode https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
+	"vscode https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
 	# "ms-edge https://go.microsoft.com/fwlink?linkid=2149051&brand=M102"
 )
 
@@ -63,16 +63,16 @@ done
 # ##################################################
 # Assets
 # ##################################################
-# declare -A file_mappings=(
-# 	["configs/xfce4-panel-config.tar.bz2"]="./xfce4-panel-config.tar.bz2"
-# 	["images/plasma-workspace-wallpapers-flow-5120x2880.jpg"]="/usr/share/images/desktop-base/plasma-workspace-wallpapers-flow-5120x2880.jpg"
-# 	["images/plasma-workspace-wallpapers-elaran-2560x1600.png"]="/usr/share/images/desktop-base/plasma-workspace-wallpapers-elaran-2560x1600.png"
-# )
+declare -A file_mappings=(
+	["configs/xfce4-panel-config.tar.bz2"]="./xfce4-panel-config.tar.bz2"
+	# ["images/plasma-workspace-wallpapers-flow-5120x2880.jpg"]="/usr/share/images/desktop-base/plasma-workspace-wallpapers-flow-5120x2880.jpg"
+	# ["images/plasma-workspace-wallpapers-elaran-2560x1600.png"]="/usr/share/images/desktop-base/plasma-workspace-wallpapers-elaran-2560x1600.png"
+)
 #
-# for source_file in "${!file_mappings[@]}"; do
-# 	destination="${file_mappings[$source_file]}"
-# 	sudo wget -O "$destination" "https://github.com/sheppy9/xfce/raw/master/assets/$source_file"
-# done
+for source_file in "${!file_mappings[@]}"; do
+	destination="${file_mappings[$source_file]}"
+	sudo wget -O "$destination" "https://github.com/sheppy9/xfce/raw/master/assets/$source_file"
+done
 
 # ##################################################
 # Keyboard shortcuts
@@ -210,8 +210,8 @@ sudo apt-get remove --purge -y `dpkg -l | grep '^rc' | awk '{print $2}'`
 # ##################################################
 # Reboot
 # ##################################################
-echo ""
-echo "##################################################"
-echo "##### Please reboot to apply all the changes #####"
-echo "##################################################"
+# echo ""
+# echo "##################################################"
+# echo "##### Please reboot to apply all the changes #####"
+# echo "##################################################"
 # sudo reboot now
