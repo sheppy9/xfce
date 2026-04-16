@@ -23,7 +23,8 @@ sudo apt update
 # Default utilities
 # sudo apt -y install network-manager-gnome firefox-esr thunar tumbler thunar-volman catfish ristretto parole gedit baobab net-tools file-roller gnome-calculator gnome-clocks remmina bspwm sxhkd usb-creator-gtk
 # Utilities
-sudo apt -y install wget curl xfce4-panel-profiles xcape git flameshot keepassxc btop rclone
+# sudo apt -y install xfce4-panel-profiles keepassxc rclone
+sudo apt -y install wget curl xcape git flameshot btop
 # xfce plugins
 # sudo apt -y install xfce4-clipman-plugin xfce4-datetime-plugin xfce4-diskperf-plugin xfce4-fsguard-plugin xfce4-mount-plugin xfce4-mpc-plugin xfce4-systemload-plugin xfce4-timer-plugin xfce4-whiskermenu-plugin xfce4-pulseaudio-plugin
 # Themes
@@ -37,7 +38,7 @@ sudo apt -y install arc-theme
 # Applications (via .deb)
 # ##################################################
 DEB_FILES=(
-	"vscode https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
+	# "vscode https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
 	# "ms-edge https://go.microsoft.com/fwlink?linkid=2149051&brand=M102"
 )
 
@@ -48,10 +49,6 @@ for file in "${DEB_FILES[@]}"; do
 	sudo apt -y install "$name.deb"
 	rm "$name.deb"
 done
-
-# Other manual download apps
-# - Gradle
-# - Dropbox
 
 # ##################################################
 # Java JDK (optional)
@@ -64,7 +61,7 @@ done
 # Assets
 # ##################################################
 declare -A file_mappings=(
-	["configs/xfce4-panel-config.tar.bz2"]="./xfce4-panel-config.tar.bz2"
+	# ["configs/xfce4-panel-config.tar.bz2"]="./xfce4-panel-config.tar.bz2"
 	# ["images/plasma-workspace-wallpapers-flow-5120x2880.jpg"]="/usr/share/images/desktop-base/plasma-workspace-wallpapers-flow-5120x2880.jpg"
 	# ["images/plasma-workspace-wallpapers-elaran-2560x1600.png"]="/usr/share/images/desktop-base/plasma-workspace-wallpapers-elaran-2560x1600.png"
 )
@@ -103,8 +100,8 @@ xfconf-query -c xfce4-keyboard-shortcuts -t 'string' -np '/xfwm4/custom/<Super>d
 # Panel
 # ##################################################
 # Required to update python gi module
-sudo apt-get --reinstall install python3-gi
-xfce4-panel-profiles load xfce4-panel-config.tar.bz2
+# sudo apt-get --reinstall install python3-gi
+# xfce4-panel-profiles load xfce4-panel-config.tar.bz2
 
 # ##################################################
 # Language
